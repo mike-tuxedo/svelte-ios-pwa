@@ -1,0 +1,98 @@
+:root {
+    --typo: #333333;
+    --green: #4cd964;
+    --red: #ff3b30;
+    --gray: #8e8e93;
+    --lightGray: rgb(239, 239, 244);
+    --borderGray: rgb(200, 199, 204);
+    --blue: #007aff;
+    --yellow: #ffcc00;
+    --white: #ffffff;
+    --white-glass-fallback: #f7f7f8;
+    --white-glass: #f7f7f888;
+    --white-glass-tabbar: #f7f7f8bb;
+    --border: #c8c7cc;
+    --border-bars: #c4c4c4;
+}
+
+.darkmode {
+    --typo: #eeeeee;
+    --green: #4cd964;
+    --red: #ff3b30;
+    --gray: #8e8e93;
+    --lightGray: #252525;
+    --borderGray: rgb(200, 199, 204);
+    --blue: #2eec52; /* green */
+    --yellow: #ffcc00;
+    --white: #353535;
+    --white-glass-fallback: #080808;
+    --white-glass: #08080888;
+    --white-glass-tabbar: #080808bb;
+    --border: #252525;
+    --border-bars: #c4c4c4;
+}
+
+.inverted {
+    --blue: #c100e4; /* green */
+    filter: invert(1);
+}
+
+
+html, body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    -webkit-overflow-scrolling: auto;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--typo);
+    background: var(--lightGray);
+}
+
+* {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, span, {
+    color: inherit;
+}
+a, a:visited, a:active {
+    color: var(--typo); //inherit funktionier hier bei firefox nicht richtig
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em 0;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+code {
+    font-family: menlo, inconsolata, monospace;
+    font-size: calc(1em - 2px);
+    color: #555;
+    background-color: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 2px;
+}
+
+.error {
+    padding: 20px;
+    background: var(--red);
+    margin: 0 -8px;
+    color: var(--white);
+}
+
+@media (min-width: 400px) {
+    body {
+        font-size: 16px;
+    }
+}
