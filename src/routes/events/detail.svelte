@@ -30,8 +30,8 @@
 	<div class="group">
         {#if event.startDate}<p class="half left"><strong>From:</strong><br> {formatToReadable(event.startDate)}</p>{/if}
         {#if event.endDate}<p class="half right"><strong>To:</strong><br> {formatToReadable(event.endDate)}</p>{/if}
-        {#if event.startTime}<p class="half left"><strong>Starttime:</strong><br> {formatToReadable(event.startTime)}</p>{/if}
-        {#if event.endTime}<p class="half right"><strong>Endtime:</strong><br> {formatToReadable(event.endTime)}</p>{/if}
+        {#if event.startTime}<p class="half left"><strong>Starttime:</strong><br> {event.startTime}</p>{/if}
+        {#if event.endTime}<p class="half right"><strong>Endtime:</strong><br> {event.endTime}</p>{/if}
 	</div>
 {/if}
 </SubPage>

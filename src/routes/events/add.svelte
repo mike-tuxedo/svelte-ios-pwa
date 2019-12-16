@@ -33,8 +33,9 @@
             return;
         }
 
-        const date = new Date(startDate);
-        const month = date.getMonth();
+        startDate = startDate ? new Date(startDate) : new Date();
+        endDate = endDate && endDate > startDate ? new Date(endDate) : new Date(startDate);
+        const month = startDate.getMonth();
 
 		const data = {
 		    "id": Date.now().toString(),

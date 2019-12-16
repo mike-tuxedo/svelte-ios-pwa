@@ -11,7 +11,7 @@ export const formatToInputDateTime = dateTime => {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
 }
 
-const formatDate = new Intl.DateTimeFormat('de', {
+const formatDate = new Intl.DateTimeFormat('en', {
     weekday: 'short', month: 'long', day: 'numeric'
 });
 

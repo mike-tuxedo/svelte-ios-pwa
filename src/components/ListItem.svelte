@@ -86,7 +86,7 @@
     	style="transform: translate({$coords.x}px);"
 		on:click={() => push(`/events/${id}`)}
     >
-		<div class="shortDate">{startDay}. {#if startDay !== endDay} - {endDay}.{/if}</div>
+		<div class="shortDate">{startDay}. {#if endDay && startDay !== endDay} - {endDay}.{/if}</div>
 		<div class="shortDescription">
 			{#if title}<h4>{title}</h4>{/if}
         	{#if location}<p>{location}</p>{/if}

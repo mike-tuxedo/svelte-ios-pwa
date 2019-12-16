@@ -37,6 +37,10 @@
 	const update = () => {
         loading = true;
 
+        startDate = startDate ? new Date(startDate) : new Date();
+        endDate = endDate && endDate > startDate ? new Date(endDate) : new Date(startDate);
+        const month = startDate.getMonth();
+
         const data = {
             "id": Date.now().toString(),
             "title": title,
@@ -46,7 +50,8 @@
             "endDate": endDate,
             "startTime": startTime,
             "endTime": endTime,
-            "type": type
+            "type": type,
+            "month": month
         };
 
         let event = $events.find((event, id) => {

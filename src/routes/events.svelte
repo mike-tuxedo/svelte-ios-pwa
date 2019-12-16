@@ -35,7 +35,7 @@
 </svelte:head>
 
 <Page>
-	{#if preparedEvents}
+	{#if preparedEvents.length}
 		<div class="tabs">
 			<Tabs>
 				<Tab on:click={() => $activeFilter = 'all'} active={$activeFilter === 'all'} first>All</Tab>
@@ -44,6 +44,7 @@
 			</Tabs>
 		</div>
 
+        <span>{preparedEvents[0].month}</span>
 		{#each preparedEvents as event, id}
             {#if $activeFilter === 'all' || $activeFilter === event.type}
                 <ListItem {...event}></ListItem>
