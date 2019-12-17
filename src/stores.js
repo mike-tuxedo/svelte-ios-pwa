@@ -23,5 +23,5 @@ export const navConfig = writable({
 // Eventsdata
 export const events = writable([]);
 useLocalStorage(events, 'events');
-export const activeFilter = writable('');
+export const activeFilter = writable('all');
 useLocalStorage(activeFilter, 'activeFilter');
