@@ -26,6 +26,7 @@ export function swipe(node) {
 	}
 
 	function handleMouseup(event) {
+	    event.preventDefault();
 		x = event.changedTouches[0].clientX;
 		y = event.changedTouches[0].clientY;
 

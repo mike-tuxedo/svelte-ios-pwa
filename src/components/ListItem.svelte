@@ -1,7 +1,7 @@
 <script>
 	import { push, link } from 'svelte-spa-router';
 	import { spring } from 'svelte/motion';
-	import { swipe } from './swipe.js';
+	import { swipe } from '../swipe.js';
 	import Loading from './Loading.svelte';
 	import { navConfig, events } from '../stores.js';
 
@@ -51,7 +51,7 @@
         $events = [...$events, newEvents];
 
         setTimeout(()=> {
-            isDeleting = falseM
+            isDeleting = false;
         }, 1000)
 	}
 
