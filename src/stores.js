@@ -25,3 +25,7 @@ export const events = writable([]);
 useLocalStorage(events, 'events');
 export const activeFilter = writable('all');
 useLocalStorage(activeFilter, 'activeFilter');
+
+// Chatmessages
+export const messages = writable([]);
+useLocalStorage(messages, 'messages');

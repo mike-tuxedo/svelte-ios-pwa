@@ -5,6 +5,7 @@
 </script>
 
 <span>
+    <a use:link use:active={'/chat*'} href="/chat"><Icon size={22} name="chat" /><div>Chat</div></a>
 	<a use:link use:active={'/events*'} href='/events'><Icon size={22} name="calendar"/><div>Events</div></a>
 	<a use:link use:active={'/settings*'} href='/settings'><Icon size={22} name="settings"/><div>Settings</div></a>
 </span>
