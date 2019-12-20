@@ -4,9 +4,11 @@
 	import { fly, fade } from 'svelte/transition';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
-	import Icon from '../Icon.svelte';
+    import IoIosArrowBack from 'svelte-icons/io/IoIosArrowBack.svelte'
+    import IoIosAdd from 'svelte-icons/io/IoIosAdd.svelte'
 
-	const titleLeft = tweened(1, {
+
+    const titleLeft = tweened(1, {
 		duration: 600,
 		easing: cubicOut
 	});
@@ -59,7 +61,7 @@
 
 <nav>
 	<div class="title {pageTitlePos}" style="transform: translateX(-{$titleLeft*50}%); left: {$titleLeft*50}vw;" on:click={back}>
-	{#if ($navConfig.type === 'subpage')}<Icon name="back"/>{/if}
+	{#if ($navConfig.type === 'subpage')}<span class="back"><IoIosArrowBack /></span>{/if}
 	{pageTitle}
 	</div>
 	<div class="subTitle" style="left: -{$subTitleLeft*100}vw">{subPageTitle}</div>
@@ -75,9 +77,9 @@
 	{/if}
 
 	{#if (pageTitle === 'Links' && $navConfig.type === 'page')}
-		<div class="add right" transition:fade="{fadeOptions}" on:click={$navConfig.actions.add}><Icon name="add" active={true}/></div>
+		<div class="add right" transition:fade="{fadeOptions}" on:click={$navConfig.actions.add}><IoIosAdd/></div>
 	{:else if pageTitle === 'Events' && $navConfig.type === 'page'}
-		<div class="add right" transition:fade="{fadeOptions}" on:click={$navConfig.actions.add}><Icon name="add" active={true}/></div>
+		<div class="add right" transition:fade="{fadeOptions}" on:click={$navConfig.actions.add}><IoIosAdd/></div>
 	{/if}
 </nav>
 
@@ -130,5 +132,15 @@
 				color: var(--blue);
 			}
 		}
+
+        &.add {
+            width: 28px;
+            height: 28px;
+            margin-top: 9px;
+        }
+        .back {
+            width: 28px;
+            height: 28px;
+        }
 	}
 </style>

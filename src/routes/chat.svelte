@@ -5,10 +5,10 @@
         messages,
     } from '../stores.js'
     import {fade} from 'svelte/transition'
-    import Icon from '../components/Icon.svelte'
     import {onMount} from 'svelte'
     import Loading from '../components/Loading.svelte'
     import Button from '../components/Button.svelte'
+    import IoMdSend from 'svelte-icons/io/IoMdSend.svelte'
 
     $navConfig = {
         type: 'page',
@@ -129,6 +129,8 @@
         position: absolute;
         bottom: 10px;
         right: 9px;
+        width: 28px;
+        height: 28px;
     }
 
     .loading,
@@ -167,7 +169,7 @@
                 bind:value={messageText}
                 placeholder="Type your message here"/>
         <button on:click={saveMessage}>
-            <Icon size={22} name="send"/>
+            <IoMdSend/>
         </button>
     </div>
 </Page>

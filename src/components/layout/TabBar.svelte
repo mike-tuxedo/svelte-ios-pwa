@@ -1,17 +1,19 @@
 <script>
 	import {link, push, pop, replace, location, querystring} from 'svelte-spa-router'
 	import active from 'svelte-spa-router/active'
-	import Icon from '../Icon.svelte';
+    import IoIosSend from 'svelte-icons/io/IoIosSend.svelte'
+    import IoIosCalendar from 'svelte-icons/io/IoIosCalendar.svelte'
+    import IoIosSettings from 'svelte-icons/io/IoIosSettings.svelte'
 </script>
 
-<span>
-    <a use:link use:active={'/chat*'} href="/chat"><Icon size={22} name="chat" /><div>Chat</div></a>
-	<a use:link use:active={'/events*'} href='/events'><Icon size={22} name="calendar"/><div>Events</div></a>
-	<a use:link use:active={'/settings*'} href='/settings'><Icon size={22} name="settings"/><div>Settings</div></a>
+<span class="wrapper">
+    <a use:link use:active={'/chat*'} href="/chat"><span class="linkIcon"><IoIosSend/></span><div>Chat</div></a>
+	<a use:link use:active={'/events*'} href='/events'><span class="linkIcon"><IoIosCalendar/></span><div>Events</div></a>
+	<a use:link use:active={'/settings*'} href='/settings'><span class="linkIcon"><IoIosSettings/></span><div>Settings</div></a>
 </span>
 
 <style type="text/scss">
-	span {
+	.wrapper {
 		display: flex;
 	    align-items: center;
 		position: fixed;
@@ -34,6 +36,15 @@
 		text-align: center;
 		font-size: 11px;
 		text-decoration: none;
+
+        .linkIcon {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+        }
+        div {
+            margin-top: -5px;
+        }
 	}
 	:global(a.active) {
 		color: var(--blue);

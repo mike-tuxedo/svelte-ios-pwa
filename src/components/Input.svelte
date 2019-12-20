@@ -1,6 +1,6 @@
 <script>
-	import Icon from '../Icon.svelte';
-	import { formatToReadable } from '../../utils/datetime.js';
+	import { formatToReadable } from '../utils/datetime.js';
+    import IoIosCheckbox from 'svelte-icons/io/IoIosCheckbox.svelte'
 
 	export let value;
 	export let type;
@@ -14,6 +14,7 @@
 	export let max="60";
 	export let step="5";
 </script>
+
 <style type="text/scss">
 input {
     -webkit-appearance: none;
@@ -105,6 +106,7 @@ label {
 		display: none;
 	}
 	span {
+        display: flex;
 		&:first-child {
 			color: var(--gray);
 		}
@@ -115,6 +117,11 @@ label {
 			top: 0;
 		}
 	}
+    .icon {
+        width: 28px;
+        height: 28px;
+        color: var(--blue);
+    }
 }
 .checkbox {
 	position: relative;
@@ -196,7 +203,7 @@ label {
 <label class="radio {size} {pos}">
 	<span>{text}</span>
 	<input type="radio" bind:group={group} value={value} class={size}>
-	{#if group === value}<span><Icon name="check" active={true}/></span>{/if}
+	{#if group === value}<span class="icon"><IoIosCheckbox /></span>{/if}
 </label>
 {:else if (type === 'checkbox')}
 <label class="checkbox {size} {pos}">

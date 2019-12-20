@@ -2,7 +2,6 @@
     import { fly } from 'svelte/transition'
     import { expoOut } from 'svelte/easing'
     import Page from '../components/layout/Page.svelte'
-    import Icon from '../components/Icon.svelte'
     import { navConfig } from '../stores.js'
 
     $navConfig = {
@@ -64,17 +63,6 @@
 
 <Page>
     <div class="wrapper">
-        <h1 in:fly={flyOptions}>Hi,</h1>
-        <h2 in:fly={flyOptions}>
-            at the bottom navigation you find links to ...
-        </h2>
-        <h3 class="link1" in:fly={{ ...flyOptions, delay: 1500 }}>
-            <Icon name="calendar" />
-            your events
-        </h3>
-        <h3 class="link3" in:fly={{ ...flyOptions, delay: 2500 }}>
-            <Icon name="settings" />
-            and your settings
-        </h3>
+        <h1 in:fly={flyOptions}>Hi, this is a ios pwa-demo build with svelte.</h1>
     </div>
 </Page>

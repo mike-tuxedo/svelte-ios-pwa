@@ -1,9 +1,9 @@
 <script>
 	import { navConfig, darkmode } from '../stores.js';
 	import Page from '../components/layout/Page.svelte';
-	import Input from '../components/forms/Input.svelte';
-	import Headline from '../components/forms/Headline.svelte';
-	import InputGroup from '../components/forms/InputGroup.svelte';
+	import Input from '../components/Input.svelte';
+	import Headline from '../components/Headline.svelte';
+	import InputGroup from '../components/InputGroup.svelte';
 
 	const switchTheme = () => {
 		$darkmode = !$darkmode;

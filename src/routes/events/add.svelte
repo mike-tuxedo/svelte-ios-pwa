@@ -2,9 +2,9 @@
 	import { push } from 'svelte-spa-router';
 	import FullPage from '../../components/layout/FullPage.svelte';
 	import { navConfig, events } from '../../stores.js';
-	import Headline from '../../components/forms/Headline.svelte';
-	import InputGroup from '../../components/forms/InputGroup.svelte';
-	import Input from '../../components/forms/Input.svelte';
+	import Headline from '../../components/Headline.svelte';
+	import InputGroup from '../../components/InputGroup.svelte';
+	import Input from '../../components/Input.svelte';
 	import Button from '../../components/Button.svelte';
 	import Loading from '../../components/Loading.svelte';
 

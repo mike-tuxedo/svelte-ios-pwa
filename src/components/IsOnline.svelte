@@ -1,7 +1,6 @@
 <script>
 import isOnline from 'is-online';
 import { fly } from 'svelte/transition';
-import Icon from './Icon.svelte';
 
 let online = true;
 let showBanner = false;
