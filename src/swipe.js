@@ -1,10 +1,13 @@
 export function swipe(node) {
 	let x;
 	let y;
+	let startX = 0;
+	let endX = 0;
 
 	function handleMousedown(event) {
 		x = event.changedTouches[0].clientX;
 		y = event.changedTouches[0].clientY;
+		startX = x;
 
 		node.dispatchEvent(new CustomEvent('panstart', {
 			detail: { x, y }
@@ -26,9 +29,14 @@ export function swipe(node) {
 	}
 
 	function handleMouseup(event) {
-	    event.preventDefault();
 		x = event.changedTouches[0].clientX;
 		y = event.changedTouches[0].clientY;
+        endX = x;
+
+        // Fix iOS fireing clickevent
+        if (startX - endX > 5) {
+            event.preventDefault();
+        }
 
 		node.dispatchEvent(new CustomEvent('panend', {
 			detail: { x, y }
