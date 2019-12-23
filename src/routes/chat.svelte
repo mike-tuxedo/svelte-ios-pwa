@@ -35,10 +35,11 @@
     }
 
     // Saves a new message to your Cloud Firestore database.
-    const saveMessage = () => {
+    const sendMessage = () => {
         loading = true
         setTimeout(()=> {
             $messages = [...$messages, messageText]
+            messageText = ''
             loading = false;
         }, 1000)
     }
@@ -96,6 +97,7 @@
         margin-left: -8px;
         padding: 10px;
         box-sizing: border-box;
+        background: var(--lightGray);
     }
 
     textarea {
@@ -168,7 +170,7 @@
                 name="text"
                 bind:value={messageText}
                 placeholder="Type your message here"/>
-        <button on:click={saveMessage}>
+        <button on:click={sendMessage}>
             <IoMdSend/>
         </button>
     </div>
