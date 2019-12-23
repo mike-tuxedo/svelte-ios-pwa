@@ -20,13 +20,18 @@
     let prevMonth = prevEvent.getMonth();
     let preparedEvents = [];
 
-    for(event of $events) {
-        const preparedEvent = {...event};
-        const date = new Date(preparedEvent.startDate);
-        const month = date.getMonth();
-        preparedEvent.month = monthMap[month];
+    $: if ($events) {
+        console.log('change events',$events);
+        const tmpEvents = [];
+        for(event of $events) {
+            const preparedEvent = {...event};
+            const date = new Date(preparedEvent.startDate);
+            const month = date.getMonth();
+            preparedEvent.month = monthMap[month];
 
-        preparedEvents.push(preparedEvent);
+            tmpEvents.push(preparedEvent);
+        }
+        preparedEvents = tmpEvents;
     }
 </script>
 

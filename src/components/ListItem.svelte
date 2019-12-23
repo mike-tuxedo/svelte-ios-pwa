@@ -48,10 +48,12 @@
 
 		isDeleting = true;
         const newEvents = $events.filter(event => event.id !== id);
-        $events = [...$events, newEvents];
 
         setTimeout(()=> {
             isDeleting = false;
+            console.log(newEvents);
+            $events = newEvents;
+            coords.set({ x: 0, y: 0 });
         }, 1000)
 	}
 
