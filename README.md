@@ -5,7 +5,6 @@
 ### What's in the Demo:
 - check if device has internet connection
 - of course a service-worker build with https://www.pwabuilder.com/ with litte modifications for onlinecheck
-- show "update app" modal for the user, by changing serviceworker versionnumber
 - iOS titlebar at the top (iOS Navigationbar component)
 - iOS navigationbar at the bottom (iOS TabBar component)
 - iOS pagetypes to implement custom pageentry/pageleave-animation
