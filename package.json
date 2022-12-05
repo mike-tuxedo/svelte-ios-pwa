@@ -16,7 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "is-online": "^8.2.1",
+    "is-online": "^10.0.0",
     "sass": "^1.23.7",
     "sirv-cli": "^0.4.4",
     "svelte-icons": "^1.1.0",
